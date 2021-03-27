@@ -1,0 +1,32 @@
+.timer_result_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .tomato_icons{
+    text-align: center;
+  }
+  
+  .tomato_icon{
+    font-size: 3rem;
+    color: #fff;
+    margin: 0 0.5rem;
+  }
+  
+  .timer_text p {
+    font-size: 1.6rem;
+    color: #fff;
+    text-align: center;
+    padding: 2.5rem 0;
+  }
+
+  .icons{
+    text-align: center;
+  }
+
+  .play_icon, .pause_icon{
+    font-size: 6rem;
+    color: #fff;
+    cursor: pointer;
+  }
