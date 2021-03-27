@@ -8,6 +8,10 @@ import "./Info.css";
 import "./App.css";
 
 class App extends Component {
+  const style {
+    filter: "blur(8px)"
+  }
+
   render() {
     return (
       <div className="wrapper">
