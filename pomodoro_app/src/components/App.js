@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Info from "./Info";
 import Timer from "./Timer";
 import TimerResult from "./TimerResults";
@@ -7,14 +7,16 @@ import "./Timer.css";
 import "./Info.css";
 import "./App.css";
 
-function App() {
-  return (
-    <div className="wrapper">
-      <Info />
-      <Timer />
-      <TimerResult />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="wrapper">
+        <Info />
+        <Timer />
+        <TimerResult />
+      </div>
+    );
+  }
 }
 
 export default App;

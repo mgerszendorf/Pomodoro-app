@@ -1,8 +1,24 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
+import TimeResults from "./TimerResults";
 
 const Timer = (props) => {
-  const minutes = "10";
-  const seconds = "20";
+  const [minutes, setMinutes] = useState(25);
+  const [seconds, setSeconds] = useState(0);
+  let flag = 0;
+
+  function tick() {
+    if (minutes == 25) setMinutes(24);
+    if (seconds == 0) flag = 1;
+  }
+
+  // useEffect(() => {
+  //   let timerID = setInterval(() => timer(), 1000);
+  //   return () => clearInterval(timerID);
+  // });
+
+  // function timer() {
+  //   setSeconds(seconds - 1);
+  // }
 
   return (
     <div className="timer_wrapper">

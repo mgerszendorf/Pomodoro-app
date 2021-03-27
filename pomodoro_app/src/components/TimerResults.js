@@ -6,7 +6,7 @@ import { CgPlayPauseO } from "react-icons/cg";
 
 class TimerResults extends Component {
   state = {
-    button: true,
+    button: false,
   };
 
   handleClick = (props) => {
@@ -15,7 +15,7 @@ class TimerResults extends Component {
     });
   };
 
-  render() {
+  render(props) {
     return (
       <div className="timer_result_wrapper">
         <div className="tomato_icons">
@@ -29,9 +29,9 @@ class TimerResults extends Component {
         </div>
         <div className="icons" onClick={this.handleClick}>
           {this.state.button ? (
-            <CgPlayButtonO className="play_icon" />
-          ) : (
             <CgPlayPauseO className="pause_icon" />
+          ) : (
+            <CgPlayButtonO className="play_icon" />
           )}
         </div>
       </div>
