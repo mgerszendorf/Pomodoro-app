@@ -1,6 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Timer = (props) => {
+  const progressBarStyle = {
+    width: `${100 - props.percentage}%`,
+    backgroundColor: "#DF181A",
+  };
+
+  const progressBarStyleStart = {
+    backgroundColor: "#fff",
+  };
+
   return (
     <div className="timer_wrapper">
       <div className="time">
@@ -19,7 +28,16 @@ const Timer = (props) => {
           {props.seconds <= 9 ? "0" + props.seconds : props.seconds}
         </p>
       </div>
-      <div className="progress_bar"></div>
+      <div className="progress_bar">
+        <div
+          className="progress_value"
+          style={
+            props.time === props.startingProgress
+              ? progressBarStyleStart
+              : progressBarStyle
+          }
+        ></div>
+      </div>
     </div>
   );
 };

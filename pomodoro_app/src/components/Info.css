@@ -52,3 +52,15 @@
     color: #a80c0f;
     text-align: center;
 }
+
+@media all and (min-width: 1024px){
+    .pomodoro_info_h1{
+        font-size: 3.1rem;
+        margin: 2rem;
+    }
+
+    .pomodoro_info_text{
+        font-size: 2.2rem;
+        margin: 2rem 5rem;
+    }
+}

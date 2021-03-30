@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { GiTomato } from "react-icons/gi";
 import { CgPlayButtonO } from "react-icons/cg";
