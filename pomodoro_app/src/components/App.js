@@ -34,14 +34,6 @@ const App = (props) => {
     donePomodorosFunction();
   }
 
-  useEffect(() => {
-    let secondIntervall = null;
-    if (button) {
-      secondIntervall = setInterval(conversion, 1000);
-      return () => clearInterval(secondIntervall);
-    }
-  }, [button, conversion]);
-
   // Timer
   function donePomodorosFunction() {
     if (time === 0 && button === true) {
@@ -86,19 +78,6 @@ const App = (props) => {
     }
   }
 
-  useEffect(() => {
-    let interval = null;
-    if (button) {
-      interval = setInterval(() => {
-        setTime((time) => time - 1);
-      }, 1000);
-    } else if (!button && time !== 0) {
-      clearInterval(interval);
-    }
-    return () => clearInterval(interval);
-  }, [button, time]);
-
-  // Alarm
   function SoundPlay(src) {
     const sound = new Howl({
       src: [Music],
@@ -110,13 +89,21 @@ const App = (props) => {
     SoundPlay();
   }
 
-  // Calculation of percentages - progress bar
   // eslint-disable-next-line react-hooks/exhaustive-deps
   function progressBar() {
     if (button) {
       setPercentage((time / startingProgress) * 100);
     }
   }
+
+  // useEffect for conversion, progress bar and cutdown timer
+  useEffect(() => {
+    let secondIntervall = null;
+    if (button) {
+      secondIntervall = setInterval(conversion, 1000);
+      return () => clearInterval(secondIntervall);
+    }
+  }, [button, conversion]);
 
   useEffect(() => {
     let progressIntervall = null;
@@ -125,6 +112,18 @@ const App = (props) => {
       return () => clearInterval(progressIntervall);
     }
   }, [button, progressBar]);
+
+  useEffect(() => {
+    let interval = null;
+    if (button) {
+      interval = setInterval(() => {
+        setTime((time) => time - 1);
+      }, 1000);
+    } else if (!button && time !== 0) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [button, time]);
 
   return (
     <div className="wrapper">
