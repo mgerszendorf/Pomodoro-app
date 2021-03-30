@@ -7,7 +7,7 @@ import "./Timer.css";
 import "./Info.css";
 import "./App.css";
 import { Howl, Howler } from "howler";
-import Music from "./music.mp3";
+import Music from "./sound/music.mp3";
 
 const App = (props) => {
   const [button, setButton] = useState(false);
@@ -104,7 +104,6 @@ const App = (props) => {
       src: [Music],
     });
     sound.play();
-    console.log("sound");
   }
 
   if (time === 0) {
